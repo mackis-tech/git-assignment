@@ -12,7 +12,7 @@ pipeline {
 			sh 'chmod +x test.sh'
 			sh 'echo "I am here"'
 			sh 'sh test.sh'
-				
+			sh 'id'
 			sh 'pwd'
 			}
 		}
