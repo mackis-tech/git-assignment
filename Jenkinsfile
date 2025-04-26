@@ -10,7 +10,9 @@ pipeline {
 		stage('run shell script') {
 			steps {
 			sh 'chmod +x test.sh'
+			sh 'echo "I am here"'
 			sh 'test.sh'
+				
 			sh 'pwd'
 			}
 		}
