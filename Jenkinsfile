@@ -28,24 +28,14 @@ pipeline {
 	}
 	post {
 		success {
-			
-			emailext (
-				from: "${EMAIL_FROM}",
-				to: "${EMAIL_TO}",
-				subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
-				body: "Please check the log at Jenkins"
-				)
-			
-			
+			mail to: "${EMAIL_TO}",
+			subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
+			body: "Please check the log at Jenkins"			
 		}
 		failure {
-			emailext (
-				from: "${EMAIL_FROM}",
-				to: "${EMAIL_TO}",
-				subject: "Build Failed: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
-				body: "Please check the log at Jenkins"
-				)
-			
+			mail to: "${EMAIL_TO}",
+			subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
+			body: "Please check the log at Jenkins"				
 		}
 		
 	}	
