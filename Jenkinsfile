@@ -28,15 +28,13 @@ pipeline {
 	}
 	post {
 		success {
-			try {
+			
 			emailext (
 				to: "${EMAIL_TO}",
 				subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
 				body: "Please check the log at Jenkins"
 				)
-			} catch (Exception e) {
-                echo "Failed to send email: ${e.getMessage()}"
-            }
+			
 			
 		}
 		failure {
