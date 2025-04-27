@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	environment {
+		EMAIL_TO="mackis.tech@gmail.com"
+	}
 
 	stages {
 		stage('checkout Code') {
@@ -17,4 +20,15 @@ pipeline {
 			}
 		}
 	}
+	post {
+		failure {
+			emailext {
+				to: "${EMAIL_TO}",
+				subject: "Build Failed: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
+				body: "Please check the log at Jenkins"
+				}
+			}
+	}
+		
+			
 }
