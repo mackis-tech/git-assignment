@@ -29,8 +29,9 @@ pipeline {
 	post {
 		success {
 			mail to: "${EMAIL_TO}",
-			subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
-			body: "Please check the log at Jenkins"			
+				subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
+				body: "Please check the log at Jenkins"		
+			build job: 'My First Pipeline', wait: true
 		}
 		failure {
 			mail to: "${EMAIL_TO}",
