@@ -5,6 +5,7 @@ pipeline {
     	}
 	
 	environment {
+		EMAIl_FROM="mackis.tect@gmail.com"
 		EMAIL_TO="mackis.tech@gmail.com"
 	}
 	
