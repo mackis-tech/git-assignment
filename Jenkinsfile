@@ -6,7 +6,7 @@ pipeline {
 	
 	environment {
 		EMAIL_FROM="mackis.tect@gmail.com"
-		EMAIL_TO="finnyraj14@gmail.com"
+		EMAIL_TO="mackis.tect@gmail.com"
 	}
 	
 
