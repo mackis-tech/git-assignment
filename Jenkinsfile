@@ -1,8 +1,13 @@
 pipeline {
 	agent any
+	triggers {
+        	githubPush()
+    	}
+	
 	environment {
 		EMAIL_TO="mackis.tech@gmail.com"
 	}
+	
 
 	stages {
 		stage('checkout Code') {
@@ -37,6 +42,7 @@ pipeline {
 				)
 			}
 		}
+}
 		
 			
 }
