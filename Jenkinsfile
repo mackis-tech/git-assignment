@@ -32,7 +32,7 @@ pipeline {
 				subject: "Build Failed: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
 				body: "Please check the log at Jenkins"
 				)
-			}
+			
 		}
 		success {
 			emailext (
@@ -40,9 +40,9 @@ pipeline {
 				subject: "Build Succeeded: ${env.JOB_NAME} ${env.BUILD_NUMBER}",
 				body: "Please check the log at Jenkins"
 				)
-			}
+			
 		}
-}
+	}	
 		
 			
 }
